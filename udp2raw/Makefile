@@ -13,13 +13,13 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/wangyu-/udp2raw-tunnel.git
-PKG_SOURCE_VERSION:=238e85a5e4eed315c6cc99301e737fd8d8d68e0e
+PKG_SOURCE_VERSION:=2c2d897bc2140dbe77cea99f92942425632088e6
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.xz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.xz
 
 PKG_LICENSE:=MIT
 PKG_LICENSE_FILES:=LICENSE
-PKG_MAINTAINER:=wangyu-
+PKG_MAINTAINER:=Yu Wang
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -32,21 +32,19 @@ define Package/udp2raw-tunnel
 	CATEGORY:=Network
 	TITLE:=Tunnel which turns UDP Traffic into Encrypted FakeTCP/UDP/ICMP Traffic
 	URL:=https://github.com/wangyu-/udp2raw-tunnel
-	DEPENDS:= +libstdcpp +libpthread +librt
 endef
 
 define Package/udp2raw-tunnel/description
 	udp2raw-tunnel is a tunnel which turns UDP Traffic into Encrypted FakeTCP/UDP/ICMP Traffic by using Raw Socket.
 endef
 
-MAKE_FLAGS += cross
+MAKE_FLAGS += cross2
 
-define Build/Prepare
-	$(PKG_UNPACK)
-	sed -i 's/cc_cross=.*/cc_cross=$(TARGET_CXX)/g' $(PKG_BUILD_DIR)/makefile
-	sed -i '/\*gitversion/d' $(PKG_BUILD_DIR)/makefile
-	echo 'const char *gitversion = "$(PKG_VERSION)";' > $(PKG_BUILD_DIR)/git_version.h
-	$(Build/Patch)
+define Build/Configure
+	$(call Build/Configure/Default)
+	$(SED) 's/cc_cross[[:space:]]*=.*/cc_cross=$(TARGET_CXX)/' \
+		-e 's/\\".*shell git rev-parse HEAD.*\\"/\\"$(PKG_SOURCE_VERSION)\\"/' \
+		$(PKG_BUILD_DIR)/makefile
 endef
 
 define Package/udp2raw-tunnel/install
