@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=dnscrypt-proxy-full
-PKG_VERSION:=2.0.25
+PKG_VERSION:=2.0.29-beta.1
 PKG_RELEASE:=1
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -50,8 +50,8 @@ ifeq ($(ARCH),arm64)
 endif
 endif
 ifeq ($(ARCH),aarch64)
-	PKG_ARCH_DNSCRYPT:=linux_arm
-	PKG_BUILD_DNSCRYPT:=linux-arm
+	PKG_ARCH_DNSCRYPT:=linux_arm64
+	PKG_BUILD_DNSCRYPT:=linux-arm64
 endif
 
 define Build/Prepare
