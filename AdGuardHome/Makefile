@@ -60,7 +60,7 @@ endef
 
 define Build/Compile
 	chmod 0755 $(PKG_BUILD_DIR)/AdGuardHome/AdGuardHome
-	upx --lzma $(PKG_BUILD_DIR)/AdGuardHome/AdGuardHome
+#	upx --lzma $(PKG_BUILD_DIR)/AdGuardHome/AdGuardHome
 endef
 
 define Package/$(PKG_NAME)/install
