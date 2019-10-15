@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=v2ray-plugin
-PKG_VERSION:=v1.2.0
+PKG_VERSION:=1.2.0
 PKG_RELEASE:=v1.2.0
 PKG_MAINTAINER:=chenhw2 <https://github.com/chenhw2>
 
