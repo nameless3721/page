@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=v2ray-plugin
-PKG_VERSION:=1.1.0
-PKG_RELEASE:=20190219
+PKG_VERSION:=v1.2.0
+PKG_RELEASE:=v1.2.0
 PKG_MAINTAINER:=chenhw2 <https://github.com/chenhw2>
 
 # OpenWrt ARCH: arm, i386, x86_64, mips, mipsel
@@ -33,6 +33,15 @@ ifeq ($(ARCH),x86_64)
 endif
 ifeq ($(ARCH),arm)
 	BIN_ARCH:=arm7
+endif
+ifeq ($(ARCH),arm64)
+	PKG_ARCH_DNSCRYPT:=arm64
+	PKG_BUILD_DNSCRYPT:=arm64
+
+endif
+ifeq ($(ARCH),aarch64)
+	PKG_ARCH_DNSCRYPT:=arm64
+	PKG_BUILD_DNSCRYPT:=arm64
 endif
 
 PKG_SOURCE:=v2ray-plugin-linux-$(PKG_ARCH)-v$(PKG_VERSION).tar.gz
