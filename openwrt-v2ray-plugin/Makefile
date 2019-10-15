@@ -35,13 +35,13 @@ ifeq ($(ARCH),arm)
 	BIN_ARCH:=arm7
 endif
 ifeq ($(ARCH),arm64)
-	PKG_ARCH_DNSCRYPT:=arm64
-	PKG_BUILD_DNSCRYPT:=arm64
+	PKG_ARCH:=arm64
+	BIN_ARCH:=arm64
 
 endif
 ifeq ($(ARCH),aarch64)
-	PKG_ARCH_DNSCRYPT:=arm64
-	PKG_BUILD_DNSCRYPT:=arm64
+	PKG_ARCH:=arm64
+	BIN_ARCH:=arm64
 endif
 
 PKG_SOURCE:=v2ray-plugin-linux-$(PKG_ARCH)-v$(PKG_VERSION).tar.gz
