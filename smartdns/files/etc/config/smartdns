@@ -1,3 +1,97 @@
-config 'smartdns'
-	option 'enabled' '0'
-	
+
+config smartdns
+	option tcp_server '1'
+	option prefetch_domain '0'
+	option rr_ttl_min '300'
+	option coredump '0'
+	option server_name 'smartdns'
+	option port '5335'
+	option dualstack_ip_selection '0'
+	option redirect 'none'
+	option enabled '1'
+	option ipv6_server '1'
+	list old_redirect 'none'
+	list old_port '6053'
+	list old_enabled '1'
+
+config server
+	option ip 'https://1.1.1.1/dns-query'
+	option type 'https'
+	option server_group 'gugu'
+	option blacklist_ip '0'
+	option enabled '1'
+
+config server
+	option ip '8.8.4.4'
+	option type 'tls'
+	option blacklist_ip '0'
+	option enabled '1'
+
+config server
+	option ip '223.5.5.5'
+	option type 'tcp'
+	option enabled '1'
+
+config server
+	option ip '119.29.29.29'
+	option type 'tcp'
+	option enabled '1'
+
+config server
+	option ip '208.67.222.222'
+	option blacklist_ip '0'
+	option addition_arg '-check-edns'
+	option type 'tcp'
+	option port '443'
+	option enabled '1'
+
+config server
+	option ip '2001:4860:4860::8844'
+	option type 'tcp'
+	option enabled '0'
+
+config server
+	option blacklist_ip '0'
+	option server_group 'gugu'
+	option ip '1.0.0.1'
+	option type 'tls'
+	option enabled '1'
+
+config server
+	option type 'udp'
+	option ip '202.96.128.166'
+	option server_group 'youku'
+	option blacklist_ip '0'
+	option enabled '1'
+
+config server
+	option ip 'https://[2606:4700:4700::1111]/dns-query'
+	option type 'https'
+	option blacklist_ip '0'
+	option enabled '0'
+
+config server
+	option ip '240C::6666'
+	option type 'tcp'
+	option enabled '0'
+
+config server
+	option type 'udp'
+	option ip '116.199.0.200'
+	option enabled '1'
+
+config server
+	option type 'udp'
+	option ip '180.76.76.76'
+	option enabled '1'
+
+config server
+	option type 'udp'
+	option ip '114.114.114.114'
+	option enabled '1'
+
+config server
+	option enabled '1'
+	option ip 'dns.rubyfish.cn'
+	option type 'tls'
+
