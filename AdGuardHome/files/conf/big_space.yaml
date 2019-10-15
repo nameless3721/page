@@ -16,7 +16,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: false
   bootstrap_dns:
-  - 1.0.0.1:53
+  - 127.0.0.1:6053
   - 2606:4700:4700::1001:53
   all_servers: true
   allowed_clients:
@@ -30,31 +30,8 @@ dns:
   safebrowsing_enabled: false
   resolveraddress: ""
   upstream_dns:
-  - 202.141.178.13:5353
-  - 202.38.93.153:5353
-  - 202.141.162.123:5353
-  - https://https://neatdns.ustclug.org/resolve
-  - https://dns.rubyfish.cn/dns-query
-  - https://ndns.233py.com/dns-query
-  - https://edns.233py.com/dns-query
-  - https://wdns.233py.com/dns-query
-  - https://sdns.233py.com/dns-query
-  - 1.1.1.1
-  - 9.9.9.9
-  - 117.50.10.10
-  - 119.29.29.29
-  - 114.114.114.114
-  - 223.5.5.5
-  - 208.67.222.222:5353
-  - 2606:4700:4700::1111
-  - 2606:4700:4700::1001
-  - tcp://8.8.8.8
-  - tcp://8.8.4.4
-  - tcp://2001:4860:4860::8888
-  - tcp://2001:4860:4860::8844
-  - tls://dns.google
-  - tls://1dot1dot1dot1.cloudflare-dns.com
-  - https://dns9.quad9.net/dns-query
+  - 127.0.0.1:6053
+  - '[::1]:6053'
 tls:
   enabled: false
   server_name: ""
@@ -196,7 +173,14 @@ filters:
   url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
   name: uBlock filters -- Unbreak
   id: 1565486411
-user_rules: []
+user_rules: 
+- '@@||api.ipify.org^'
+- '@@||ipapi.co^'
+- '@@||pv.sohu.com^'
+- '@@||.click.taobao.com^'
+- '@@||.click.simba.taobao.com^'
+- '@@||s.click.taobao.com^'
+- ""
 dhcp:
   enabled: false
   interface_name: ""
