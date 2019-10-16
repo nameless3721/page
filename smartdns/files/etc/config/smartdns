@@ -5,7 +5,7 @@ config smartdns
 	option rr_ttl_min '300'
 	option coredump '0'
 	option server_name 'smartdns'
-	option port '5335'
+	option port '6053'
 	option dualstack_ip_selection '0'
 	option redirect 'none'
 	option enabled '1'
