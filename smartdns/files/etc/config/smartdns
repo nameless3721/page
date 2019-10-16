@@ -24,6 +24,7 @@ config server
 config server
 	option ip '8.8.4.4'
 	option type 'tls'
+	option server_group 'gugu'
 	option blacklist_ip '0'
 	option enabled '1'
 
