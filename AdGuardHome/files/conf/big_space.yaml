@@ -31,7 +31,6 @@ dns:
   resolveraddress: ""
   upstream_dns:
   - 127.0.0.1:5335
-  - '[::1]:5335'
 tls:
   enabled: false
   server_name: ""
