@@ -31,6 +31,7 @@ dns:
   resolveraddress: ""
   upstream_dns:
   - 127.0.0.1:6053
+  - '[::1]:6053'
 tls:
   enabled: false
   server_name: ""
