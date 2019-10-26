@@ -180,6 +180,7 @@ user_rules:
 - '@@||.click.taobao.com^'
 - '@@||.click.simba.taobao.com^'
 - '@@||s.click.taobao.com^'
+- '||api.abema.io/v*/ip/check^'
 - ""
 dhcp:
   enabled: false
