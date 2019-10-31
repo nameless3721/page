@@ -95,4 +95,5 @@ config server
 	option enabled '1'
 	option ip 'dns.rubyfish.cn'
 	option type 'tls'
+	option server_group 'gugu'
 
