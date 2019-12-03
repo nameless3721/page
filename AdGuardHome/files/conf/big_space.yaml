@@ -177,9 +177,8 @@ user_rules:
 - '@@||api.ipify.org^'
 - '@@||ipapi.co^'
 - '@@||pv.sohu.com^'
-- '@@||click.taobao.com^'
-- '@@||simba.taobao.com^'
-- '/^https?:\/\/api\.abema\.io\/v\d\/ip\/check/'
+- '@@||taobao.com^'
+- '/https?:\/\/api\.abema\.io\/v\d\/ip\/check/'
 - ""
 dhcp:
   enabled: false
